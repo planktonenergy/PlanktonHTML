@@ -1,0 +1,2436 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9db36b059e77b4efa0a66763d212d38f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+             bottom: 50px; left: 50px; width: 220px; height: 85px; 
+             border:2px solid grey; z-index:9999; font-size:16px;
+             background-color:white; opacity: 0.8; text-align: left;
+             ">
+<p style="margin-left: 10px;margin-top: 5px;"><i class="fa fa-circle" style="color:green"></i>&nbsp;Operating</p><p style="margin-left: 10px;margin-top: 5px;"><i class="fa fa-circle" style="color:orange"></i>&nbsp;Under Development</p></div>
+    
+<div style="position: fixed; 
+             top: 10px; left: 10px; width: 290px; height: 85px; 
+             z-index:9999; background-color:transparent; 
+             opacity: 1.0; text-align: center;
+             ">
+    <img src="https://www.dropbox.com/scl/fi/qsnq7mi0sh9m5ikiuvq46/Planktonlogo.png?rlkey=intvhmvwjwezbtgyu5cdgpqwf&raw=1" 
+         alt="Plankton Logo" 
+         width="200" 
+         height="80">
+</div>
+    
+            <div class="folium-map" id="map_9db36b059e77b4efa0a66763d212d38f" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9db36b059e77b4efa0a66763d212d38f = L.map(
+                "map_9db36b059e77b4efa0a66763d212d38f",
+                {
+                    center: [37.0902, -95.7129],
+                    crs: L.CRS.EPSG3857,
+                    maxBounds: [[24.396308, -125.0], [49.384358, -66.93457]],
+                    zoom: 5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6e16272af848366a1bb1f0313c41a389 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors, \u0026copy; \u003ca href=\"https://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 11, "maxZoom": 11, "minZoom": 5, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+            var circle_marker_6f182164af7cf693de1489a3d4c54e5e = L.circleMarker(
+                [42.2590745, -71.12886957],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_25c2c9e6f7ae02139a8cf03ae25d10fb = L.popup({"maxWidth": 265});
+
+        
+            var html_06619d34fb96d4d60d4019ccdb5dbb6e = $(`<div id="html_06619d34fb96d4d60d4019ccdb5dbb6e" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 71<br>     <b>Stage:</b> Operating<br>     <b>Type of Contract:</b> PPA<br>     <b>Property Type:</b> Educational<br>     <b>City:</b> Boston<br>     <b>State:</b> MA<br>              <img src="https://www.dropbox.com/scl/fi/i81hu1gjw8vswy69chvyq/boston-trinity-academy-phase-1.jpeg?rlkey=0nktjxym94k9yw8i4b4qb6ds5&raw=1" alt="photo" style="max-width:100%; max-height:100%;">         </div></div>`)[0];
+            popup_25c2c9e6f7ae02139a8cf03ae25d10fb.setContent(html_06619d34fb96d4d60d4019ccdb5dbb6e);
+        
+
+        circle_marker_6f182164af7cf693de1489a3d4c54e5e.bindPopup(popup_25c2c9e6f7ae02139a8cf03ae25d10fb)
+        ;
+
+        
+    
+    
+            circle_marker_6f182164af7cf693de1489a3d4c54e5e.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c59f0dbdc09541e55f5940601552dd04 = L.circleMarker(
+                [42.30783799, -71.13097934],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_6a01629bfa7a5a100dab325c0e74cc28 = L.popup({"maxWidth": 265});
+
+        
+            var html_736923fd6536389dff33d4ba28b49d52 = $(`<div id="html_736923fd6536389dff33d4ba28b49d52" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 537<br>     <b>Stage:</b> Operating<br>     <b>Type of Contract:</b> PPA<br>     <b>Property Type:</b> Educational<br>     <b>City:</b> Jamaica Plain<br>     <b>State:</b> MA<br>              <img src="https://www.dropbox.com/scl/fi/h0tm3yuu070d538bovq23/showa-institute-boston.jpg?rlkey=9sipagh17ky407gcr0t2utu5i&raw=1" alt="photo" style="max-width:100%; max-height:100%;">         </div></div>`)[0];
+            popup_6a01629bfa7a5a100dab325c0e74cc28.setContent(html_736923fd6536389dff33d4ba28b49d52);
+        
+
+        circle_marker_c59f0dbdc09541e55f5940601552dd04.bindPopup(popup_6a01629bfa7a5a100dab325c0e74cc28)
+        ;
+
+        
+    
+    
+            circle_marker_c59f0dbdc09541e55f5940601552dd04.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_55d62935c9593730d50309bb8748810a = L.circleMarker(
+                [40.56341634, -74.19116299],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_25881fd9cf8f335fa895f1115714c7bb = L.popup({"maxWidth": 265});
+
+        
+            var html_b077c3eccf0981c895aa1425fa483bd2 = $(`<div id="html_b077c3eccf0981c895aa1425fa483bd2" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 304<br>     <b>Stage:</b> Operating<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Staten Island<br>     <b>State:</b> NY<br>              <img src="https://www.dropbox.com/scl/fi/xbmghs4dlb0btqlr99kn1/Staten-Island-Kitchen.JPG?rlkey=n9vr96wwgguzkubkckfnrefcw&raw=1" alt="photo" style="max-width:100%; max-height:100%;">         </div></div>`)[0];
+            popup_25881fd9cf8f335fa895f1115714c7bb.setContent(html_b077c3eccf0981c895aa1425fa483bd2);
+        
+
+        circle_marker_55d62935c9593730d50309bb8748810a.bindPopup(popup_25881fd9cf8f335fa895f1115714c7bb)
+        ;
+
+        
+    
+    
+            circle_marker_55d62935c9593730d50309bb8748810a.bindTooltip(
+                `<div>
+                     NY
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e9b5829b5d1fe4aa4a1bd33804f59a6a = L.circleMarker(
+                [39.5719116, -75.4680115],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_e384a4b83014ae427851f9ed7abefbf3 = L.popup({"maxWidth": 265});
+
+        
+            var html_377e0c0aa0faecf69b28e3c2a0a8ee7f = $(`<div id="html_377e0c0aa0faecf69b28e3c2a0a8ee7f" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 127<br>     <b>Stage:</b> Operating<br>     <b>Type of Contract:</b> PPA<br>     <b>Property Type:</b> Apartment<br>     <b>City:</b> Salem<br>     <b>State:</b> NJ<br>              <img src="https://www.dropbox.com/scl/fi/4ft5lr2kvyak22nx6xfh5/Salem-Senior-Village.jpg?rlkey=miskygwxrv68kjh556xsho3zd&raw=1" alt="photo" style="max-width:100%; max-height:100%;">         </div></div>`)[0];
+            popup_e384a4b83014ae427851f9ed7abefbf3.setContent(html_377e0c0aa0faecf69b28e3c2a0a8ee7f);
+        
+
+        circle_marker_e9b5829b5d1fe4aa4a1bd33804f59a6a.bindPopup(popup_e384a4b83014ae427851f9ed7abefbf3)
+        ;
+
+        
+    
+    
+            circle_marker_e9b5829b5d1fe4aa4a1bd33804f59a6a.bindTooltip(
+                `<div>
+                     NJ
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_de54bbf24a153f431c12e5cac3f1dac3 = L.circleMarker(
+                [39.51743367, -74.95030687],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_d55754c6405a991d68aa867284948491 = L.popup({"maxWidth": 265});
+
+        
+            var html_2ca53a7e0f79eafaf4d01540c39d77a1 = $(`<div id="html_2ca53a7e0f79eafaf4d01540c39d77a1" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 60<br>     <b>Stage:</b> Operating<br>     <b>Type of Contract:</b> PPA<br>     <b>Property Type:</b> Apartment<br>     <b>City:</b> Minotola<br>     <b>State:</b> NJ<br>              <img src="https://www.dropbox.com/scl/fi/ltbi49un440pg7pvlcewl/Buena.jpg?rlkey=ob8pj20k41r3z1btb1zkg2plh&raw=1" alt="photo" style="max-width:100%; max-height:100%;">         </div></div>`)[0];
+            popup_d55754c6405a991d68aa867284948491.setContent(html_2ca53a7e0f79eafaf4d01540c39d77a1);
+        
+
+        circle_marker_de54bbf24a153f431c12e5cac3f1dac3.bindPopup(popup_d55754c6405a991d68aa867284948491)
+        ;
+
+        
+    
+    
+            circle_marker_de54bbf24a153f431c12e5cac3f1dac3.bindTooltip(
+                `<div>
+                     NJ
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a4522cc80684f80428a5c7ab3a42da70 = L.circleMarker(
+                [39.75493556, -74.88289778],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_74dbb74536125e9b4329b574ba225415 = L.popup({"maxWidth": 265});
+
+        
+            var html_d29145a82f4384cae1a6881b4cabe5f7 = $(`<div id="html_d29145a82f4384cae1a6881b4cabe5f7" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 28<br>     <b>Stage:</b> Operating<br>     <b>Type of Contract:</b> PPA<br>     <b>Property Type:</b> Municipal<br>     <b>City:</b> Atco<br>     <b>State:</b> NJ<br>              <img src="https://www.dropbox.com/scl/fi/v0t57cy5w5f30g3xvcnms/Waterford-Township-EMS-atco.jpg?rlkey=hik5awc061vjiljelsyolstd8&raw=1" alt="photo" style="max-width:100%; max-height:100%;">         </div></div>`)[0];
+            popup_74dbb74536125e9b4329b574ba225415.setContent(html_d29145a82f4384cae1a6881b4cabe5f7);
+        
+
+        circle_marker_a4522cc80684f80428a5c7ab3a42da70.bindPopup(popup_74dbb74536125e9b4329b574ba225415)
+        ;
+
+        
+    
+    
+            circle_marker_a4522cc80684f80428a5c7ab3a42da70.bindTooltip(
+                `<div>
+                     NJ
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1a27e932f384288f0f59a01f18238fb1 = L.circleMarker(
+                [39.76608892, -75.14192686],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_2fe35665731a1710e6bad1608736c833 = L.popup({"maxWidth": 265});
+
+        
+            var html_6f716126fffae525bb8558595a805ad6 = $(`<div id="html_6f716126fffae525bb8558595a805ad6" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 48<br>     <b>Stage:</b> Operating<br>     <b>Type of Contract:</b> PPA<br>     <b>Property Type:</b> Municipal<br>     <b>City:</b> Sewell<br>     <b>State:</b> NJ<br>              <img src="https://www.dropbox.com/scl/fi/hqkt3lb0g99kzxh2cjngh/Mantua-Township-Fire-Department.jpg?rlkey=pfg2eqv4rkubjckqqemxjydid&raw=1" alt="photo" style="max-width:100%; max-height:100%;">         </div></div>`)[0];
+            popup_2fe35665731a1710e6bad1608736c833.setContent(html_6f716126fffae525bb8558595a805ad6);
+        
+
+        circle_marker_1a27e932f384288f0f59a01f18238fb1.bindPopup(popup_2fe35665731a1710e6bad1608736c833)
+        ;
+
+        
+    
+    
+            circle_marker_1a27e932f384288f0f59a01f18238fb1.bindTooltip(
+                `<div>
+                     NJ
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_7180be63e106133df887bf4144e2023c = L.circleMarker(
+                [41.13950611, -73.52501019],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_3a620274fae2b5cd95189408821a7cf8 = L.popup({"maxWidth": 265});
+
+        
+            var html_6d685f0d6bc161582f4bf30278b7719a = $(`<div id="html_6d685f0d6bc161582f4bf30278b7719a" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 299<br>     <b>Stage:</b> Operating<br>     <b>Type of Contract:</b> PPA<br>     <b>Property Type:</b> Educational<br>     <b>City:</b> New Canaan<br>     <b>State:</b> CT<br>              <img src="https://www.dropbox.com/scl/fi/dsemmw3cjtlfxc54yf31w/West-Elementary-School-of-New-Canaan.jfif?rlkey=22becd7539lntxt5zu6a31nn9&raw=1" alt="photo" style="max-width:100%; max-height:100%;">         </div></div>`)[0];
+            popup_3a620274fae2b5cd95189408821a7cf8.setContent(html_6d685f0d6bc161582f4bf30278b7719a);
+        
+
+        circle_marker_7180be63e106133df887bf4144e2023c.bindPopup(popup_3a620274fae2b5cd95189408821a7cf8)
+        ;
+
+        
+    
+    
+            circle_marker_7180be63e106133df887bf4144e2023c.bindTooltip(
+                `<div>
+                     CT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c2cf065152da5eae176a4212b6847be5 = L.circleMarker(
+                [41.13152741, -73.48493692],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_c08470cd25049d5b35b2eae750783ea5 = L.popup({"maxWidth": 265});
+
+        
+            var html_9d4d01d582afb1b2de4d93714e0b76a3 = $(`<div id="html_9d4d01d582afb1b2de4d93714e0b76a3" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 166<br>     <b>Stage:</b> Operating<br>     <b>Type of Contract:</b> PPA<br>     <b>Property Type:</b> Educational<br>     <b>City:</b> New Canaan<br>     <b>State:</b> CT<br>              <img src="https://www.dropbox.com/scl/fi/n4b3qjjvbvb6l0sfgcod1/saxe-middle-school-new-canaan.jpg?rlkey=ys9xu9sxsi25us48wyceb0tmk&raw=1" alt="photo" style="max-width:100%; max-height:100%;">         </div></div>`)[0];
+            popup_c08470cd25049d5b35b2eae750783ea5.setContent(html_9d4d01d582afb1b2de4d93714e0b76a3);
+        
+
+        circle_marker_c2cf065152da5eae176a4212b6847be5.bindPopup(popup_c08470cd25049d5b35b2eae750783ea5)
+        ;
+
+        
+    
+    
+            circle_marker_c2cf065152da5eae176a4212b6847be5.bindTooltip(
+                `<div>
+                     CT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_63c413bc1cabf9a24a3f4a1accf1bc45 = L.circleMarker(
+                [39.80712638, -74.93197799],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_6679d85681411534da46d9ad2fa2a97e = L.popup({"maxWidth": 265});
+
+        
+            var html_cfd2a0626f8ba62b261453b0d7daeb6a = $(`<div id="html_cfd2a0626f8ba62b261453b0d7daeb6a" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 58<br>     <b>Stage:</b> Operating<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> West Berlin<br>     <b>State:</b> NJ<br>              <img src="https://www.dropbox.com/scl/fi/pphwqfldvn2xkg6tf9xkd/Premier-Shine.jpg?rlkey=s20wukzqwfbcfz8e9enr8nlax&raw=1" alt="photo" style="max-width:100%; max-height:100%;">         </div></div>`)[0];
+            popup_6679d85681411534da46d9ad2fa2a97e.setContent(html_cfd2a0626f8ba62b261453b0d7daeb6a);
+        
+
+        circle_marker_63c413bc1cabf9a24a3f4a1accf1bc45.bindPopup(popup_6679d85681411534da46d9ad2fa2a97e)
+        ;
+
+        
+    
+    
+            circle_marker_63c413bc1cabf9a24a3f4a1accf1bc45.bindTooltip(
+                `<div>
+                     NJ
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_32f1e374191aa4725851c69bd667395f = L.circleMarker(
+                [42.38789548, -71.26753807],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_f8bc0735b1d46246d13fd3a340d51e70 = L.popup({"maxWidth": 265});
+
+        
+            var html_01c39ae9ae497b3ea16ebd0a49d5f82f = $(`<div id="html_01c39ae9ae497b3ea16ebd0a49d5f82f" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 542<br>     <b>Stage:</b> Operating<br>     <b>Type of Contract:</b> Feed-in Tariff<br>     <b>Property Type:</b> Office<br>     <b>City:</b> Waltham<br>     <b>State:</b> MA<br>              <img src="https://www.dropbox.com/scl/fi/905yk5jqo1ljhhwr2mv2e/360-waltham-ave.jpeg?rlkey=gfz7wnbedpbrulho3bugor5ck&raw=1" alt="photo" style="max-width:100%; max-height:100%;">         </div></div>`)[0];
+            popup_f8bc0735b1d46246d13fd3a340d51e70.setContent(html_01c39ae9ae497b3ea16ebd0a49d5f82f);
+        
+
+        circle_marker_32f1e374191aa4725851c69bd667395f.bindPopup(popup_f8bc0735b1d46246d13fd3a340d51e70)
+        ;
+
+        
+    
+    
+            circle_marker_32f1e374191aa4725851c69bd667395f.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ac2eb8a825fd27f1a2a359cdf18eba3c = L.circleMarker(
+                [42.42325352, -71.44871788],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_f87aa4509fa584940c49ed305740efa4 = L.popup({"maxWidth": 265});
+
+        
+            var html_7d8bd14a06125187389514543b878438 = $(`<div id="html_7d8bd14a06125187389514543b878438" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 88<br>     <b>Stage:</b> Operating<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Educational<br>     <b>City:</b> Maynard<br>     <b>State:</b> MA<br>              <img src="https://www.dropbox.com/scl/fi/4je22csidvakutmj60l7v/Boys-and-girls-club.jpeg?rlkey=epex8nassle9ix1napl9qvybn&raw=1" alt="photo" style="max-width:100%; max-height:100%;">         </div></div>`)[0];
+            popup_f87aa4509fa584940c49ed305740efa4.setContent(html_7d8bd14a06125187389514543b878438);
+        
+
+        circle_marker_ac2eb8a825fd27f1a2a359cdf18eba3c.bindPopup(popup_f87aa4509fa584940c49ed305740efa4)
+        ;
+
+        
+    
+    
+            circle_marker_ac2eb8a825fd27f1a2a359cdf18eba3c.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_7984f17c82126ed713b1c6eadf0a1e1c = L.circleMarker(
+                [40.25674018, -74.36757863],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_7b5d013d20077381299c3b2589f90e9d = L.popup({"maxWidth": 265});
+
+        
+            var html_3d61e1cac730be286fe80451186e7491 = $(`<div id="html_3d61e1cac730be286fe80451186e7491" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 606<br>     <b>Stage:</b> Operating<br>     <b>Type of Contract:</b> PPA<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Manalapan Township<br>     <b>State:</b> NJ<br>              <img src="https://www.dropbox.com/scl/fi/g4iivrokh1i74i4pqevie/Sportika-manalapan.jpeg?rlkey=e7ae0dt7thfjse776ah4kls4c&raw=1" alt="photo" style="max-width:100%; max-height:100%;">         </div></div>`)[0];
+            popup_7b5d013d20077381299c3b2589f90e9d.setContent(html_3d61e1cac730be286fe80451186e7491);
+        
+
+        circle_marker_7984f17c82126ed713b1c6eadf0a1e1c.bindPopup(popup_7b5d013d20077381299c3b2589f90e9d)
+        ;
+
+        
+    
+    
+            circle_marker_7984f17c82126ed713b1c6eadf0a1e1c.bindTooltip(
+                `<div>
+                     NJ
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8068e9f2d5aba08434e594cb65aff3e1 = L.circleMarker(
+                [39.68480323, -74.99413958],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_3d260c642ddd7a0555792e2f88bd37e4 = L.popup({"maxWidth": 265});
+
+        
+            var html_4cc7ba8bad16171922c3d378dea6d381 = $(`<div id="html_4cc7ba8bad16171922c3d378dea6d381" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 33<br>     <b>Stage:</b> Operating<br>     <b>Type of Contract:</b> PPA<br>     <b>Property Type:</b> Religious<br>     <b>City:</b> Williamstown<br>     <b>State:</b> NJ<br>              <img src="https://www.dropbox.com/scl/fi/foge6v2mhr78hizkd2ls5/First-United-Methodist-Church-williamstown.jpg?rlkey=4rk1u22d8z46ymr67tpg1g6zc&raw=1" alt="photo" style="max-width:100%; max-height:100%;">         </div></div>`)[0];
+            popup_3d260c642ddd7a0555792e2f88bd37e4.setContent(html_4cc7ba8bad16171922c3d378dea6d381);
+        
+
+        circle_marker_8068e9f2d5aba08434e594cb65aff3e1.bindPopup(popup_3d260c642ddd7a0555792e2f88bd37e4)
+        ;
+
+        
+    
+    
+            circle_marker_8068e9f2d5aba08434e594cb65aff3e1.bindTooltip(
+                `<div>
+                     NJ
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_772e16679f83269f1d54011a7185fbd6 = L.circleMarker(
+                [41.49934518, -72.89976746],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_c5b4e72f5cb4b2f12d34b9a45064807f = L.popup({"maxWidth": 265});
+
+        
+            var html_146dfc3be28b3b7f2bff1a0fac1ae857 = $(`<div id="html_146dfc3be28b3b7f2bff1a0fac1ae857" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 229<br>     <b>Stage:</b> Operating<br>     <b>Type of Contract:</b> PPA<br>     <b>Property Type:</b> Educational<br>     <b>City:</b> Cheshire<br>     <b>State:</b> CT<br>              <img src="https://www.dropbox.com/scl/fi/33zdsne3rce2x0mqvjvtw/Cheshire-Academy.png?rlkey=cvn6o54i4yrwe4102r7m8lxmy&raw=1" alt="photo" style="max-width:100%; max-height:100%;">         </div></div>`)[0];
+            popup_c5b4e72f5cb4b2f12d34b9a45064807f.setContent(html_146dfc3be28b3b7f2bff1a0fac1ae857);
+        
+
+        circle_marker_772e16679f83269f1d54011a7185fbd6.bindPopup(popup_c5b4e72f5cb4b2f12d34b9a45064807f)
+        ;
+
+        
+    
+    
+            circle_marker_772e16679f83269f1d54011a7185fbd6.bindTooltip(
+                `<div>
+                     CT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1b6b810215d1d016fc9c5532811336f0 = L.circleMarker(
+                [40.38271396, -74.69553461],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_86e276c82019a23d92f4b1ce4735054d = L.popup({"maxWidth": 265});
+
+        
+            var html_17ff046af5906ab548fdb9b745f8b7e9 = $(`<div id="html_17ff046af5906ab548fdb9b745f8b7e9" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 202<br>     <b>Stage:</b> Operating<br>     <b>Type of Contract:</b> PPA<br>     <b>Property Type:</b> Educational<br>     <b>City:</b> Princeton<br>     <b>State:</b> NJ<br>              <img src="https://www.dropbox.com/scl/fi/dqeycavbmvzjoq0jj8jqc/princeton-montessori.jpeg?rlkey=ki6zek9dj7cqziouamfof1b4s&raw=1" alt="photo" style="max-width:100%; max-height:100%;">         </div></div>`)[0];
+            popup_86e276c82019a23d92f4b1ce4735054d.setContent(html_17ff046af5906ab548fdb9b745f8b7e9);
+        
+
+        circle_marker_1b6b810215d1d016fc9c5532811336f0.bindPopup(popup_86e276c82019a23d92f4b1ce4735054d)
+        ;
+
+        
+    
+    
+            circle_marker_1b6b810215d1d016fc9c5532811336f0.bindTooltip(
+                `<div>
+                     NJ
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b1ef4c2a9a94508c580c28594ea5fbf5 = L.circleMarker(
+                [39.99985454, -74.99056308],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_2ff0156b12aaae7e259a2d6c95639798 = L.popup({"maxWidth": 265});
+
+        
+            var html_1b93a3cdd24be43772d54788f2287ae8 = $(`<div id="html_1b93a3cdd24be43772d54788f2287ae8" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 448<br>     <b>Stage:</b> Operating<br>     <b>Type of Contract:</b> PPA<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Cinnaminson<br>     <b>State:</b> NJ<br>              <img src="https://www.dropbox.com/scl/fi/v0aalfe29mqk1894il3zx/Cinnaminson-Storage.jpg?rlkey=p4ua5ghulqb8n5nvtu6eekv52&raw=1" alt="photo" style="max-width:100%; max-height:100%;">         </div></div>`)[0];
+            popup_2ff0156b12aaae7e259a2d6c95639798.setContent(html_1b93a3cdd24be43772d54788f2287ae8);
+        
+
+        circle_marker_b1ef4c2a9a94508c580c28594ea5fbf5.bindPopup(popup_2ff0156b12aaae7e259a2d6c95639798)
+        ;
+
+        
+    
+    
+            circle_marker_b1ef4c2a9a94508c580c28594ea5fbf5.bindTooltip(
+                `<div>
+                     NJ
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1d3bca361f303357f201595285020bdf = L.circleMarker(
+                [39.9454015, -75.09823763],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_37df9862d7af9cf96de797ca8b1aa391 = L.popup({"maxWidth": 265});
+
+        
+            var html_ee3bdf1c07d25574babf5d2f73b67131 = $(`<div id="html_ee3bdf1c07d25574babf5d2f73b67131" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 972<br>     <b>Stage:</b> Operating<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Industrial<br>     <b>City:</b> Camden<br>     <b>State:</b> NJ<br>              <img src="https://www.dropbox.com/scl/fi/cyug9svh7zl5purf60ys2/ResinTech-Inc-camden.jpeg?rlkey=mqqetbaq1s26tpsr2ngtlrs7y&raw=1" alt="photo" style="max-width:100%; max-height:100%;">         </div></div>`)[0];
+            popup_37df9862d7af9cf96de797ca8b1aa391.setContent(html_ee3bdf1c07d25574babf5d2f73b67131);
+        
+
+        circle_marker_1d3bca361f303357f201595285020bdf.bindPopup(popup_37df9862d7af9cf96de797ca8b1aa391)
+        ;
+
+        
+    
+    
+            circle_marker_1d3bca361f303357f201595285020bdf.bindTooltip(
+                `<div>
+                     NJ
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_2eae5cf29d6085ca87df1d36c302990a = L.circleMarker(
+                [42.38660239, -71.268409],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_6e91ced59747e34b85b495f9bdaad7b8 = L.popup({"maxWidth": 265});
+
+        
+            var html_c5d33fd002cee637ca4e5f663cbb79aa = $(`<div id="html_c5d33fd002cee637ca4e5f663cbb79aa" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 182<br>     <b>Stage:</b> Operating<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Office<br>     <b>City:</b> Waltham<br>     <b>State:</b> MA<br>              <img src="https://www.dropbox.com/scl/fi/ku5rd9t21rxkd12pxsfif/350-waltham-ave.png?rlkey=sqj6fzol8q1n6gdutnnuuzxqk&raw=1" alt="photo" style="max-width:100%; max-height:100%;">         </div></div>`)[0];
+            popup_6e91ced59747e34b85b495f9bdaad7b8.setContent(html_c5d33fd002cee637ca4e5f663cbb79aa);
+        
+
+        circle_marker_2eae5cf29d6085ca87df1d36c302990a.bindPopup(popup_6e91ced59747e34b85b495f9bdaad7b8)
+        ;
+
+        
+    
+    
+            circle_marker_2eae5cf29d6085ca87df1d36c302990a.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f9c75c6394633236853e202ef9801601 = L.circleMarker(
+                [42.38664774, -71.26831402],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_0a0c89002e91b0e6b1ad55f0dc94fb52 = L.popup({"maxWidth": 265});
+
+        
+            var html_b7b61d7883ea423c769fc13c5127cd88 = $(`<div id="html_b7b61d7883ea423c769fc13c5127cd88" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 314<br>     <b>Stage:</b> Operating<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Office<br>     <b>City:</b> Waltham<br>     <b>State:</b> MA<br>              <img src="https://www.dropbox.com/scl/fi/ku5rd9t21rxkd12pxsfif/350-waltham-ave.png?rlkey=sqj6fzol8q1n6gdutnnuuzxqk&raw=1" alt="photo" style="max-width:100%; max-height:100%;">         </div></div>`)[0];
+            popup_0a0c89002e91b0e6b1ad55f0dc94fb52.setContent(html_b7b61d7883ea423c769fc13c5127cd88);
+        
+
+        circle_marker_f9c75c6394633236853e202ef9801601.bindPopup(popup_0a0c89002e91b0e6b1ad55f0dc94fb52)
+        ;
+
+        
+    
+    
+            circle_marker_f9c75c6394633236853e202ef9801601.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e70238bbceb2b4462f6755b5092dbc82 = L.circleMarker(
+                [42.08114358, -71.4092271],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_e5b30a2b145ff5e5023132494598c058 = L.popup({"maxWidth": 265});
+
+        
+            var html_4b08b6c379c4809efed4916deff09745 = $(`<div id="html_4b08b6c379c4809efed4916deff09745" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 340<br>     <b>Stage:</b> Operating<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Industrial<br>     <b>City:</b> Franklin<br>     <b>State:</b> MA<br>              <img src="https://www.dropbox.com/scl/fi/2j0vyh3skqk4wz50bce4o/42-Hayward-St.jpg?rlkey=er1utumu722lll14g259tv3i2&raw=1" alt="photo" style="max-width:100%; max-height:100%;">         </div></div>`)[0];
+            popup_e5b30a2b145ff5e5023132494598c058.setContent(html_4b08b6c379c4809efed4916deff09745);
+        
+
+        circle_marker_e70238bbceb2b4462f6755b5092dbc82.bindPopup(popup_e5b30a2b145ff5e5023132494598c058)
+        ;
+
+        
+    
+    
+            circle_marker_e70238bbceb2b4462f6755b5092dbc82.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f1d612ae65f373ba0760eacfeba13724 = L.circleMarker(
+                [42.06206964, -72.53071392],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_0189e71cae0d58e77d01a5dcfed698a6 = L.popup({"maxWidth": 265});
+
+        
+            var html_08cadfc25931f0ca1505bf0908334f77 = $(`<div id="html_08cadfc25931f0ca1505bf0908334f77" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 340<br>     <b>Stage:</b> Operating<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Religious<br>     <b>City:</b> East Longmeadow<br>     <b>State:</b> MA<br>              <img src="https://www.dropbox.com/scl/fi/nkure3d208q3ggzvdupos/New-Life-Church.JPG?rlkey=qpqtuanfwndgh0bfmt493q3os&raw=1" alt="photo" style="max-width:100%; max-height:100%;">         </div></div>`)[0];
+            popup_0189e71cae0d58e77d01a5dcfed698a6.setContent(html_08cadfc25931f0ca1505bf0908334f77);
+        
+
+        circle_marker_f1d612ae65f373ba0760eacfeba13724.bindPopup(popup_0189e71cae0d58e77d01a5dcfed698a6)
+        ;
+
+        
+    
+    
+            circle_marker_f1d612ae65f373ba0760eacfeba13724.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a5a970a159822321253492983b22fe19 = L.circleMarker(
+                [36.0332743, -86.64493485],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_707dae8039c59305133d5a4a07f625ba = L.popup({"maxWidth": 265});
+
+        
+            var html_e05735fbde92b15ba1138c2d1f98d9c0 = $(`<div id="html_e05735fbde92b15ba1138c2d1f98d9c0" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 1395<br>     <b>Stage:</b> Operating<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Nashville<br>     <b>State:</b> TN<br>              <img src="https://www.dropbox.com/scl/fi/lrn8cziq6m6kprciutgza/Tanger-Nashville.jpg?rlkey=s1g9o75dcwpg0w3tg38vu00b0&raw=1" alt="photo" style="max-width:100%; max-height:100%;">         </div></div>`)[0];
+            popup_707dae8039c59305133d5a4a07f625ba.setContent(html_e05735fbde92b15ba1138c2d1f98d9c0);
+        
+
+        circle_marker_a5a970a159822321253492983b22fe19.bindPopup(popup_707dae8039c59305133d5a4a07f625ba)
+        ;
+
+        
+    
+    
+            circle_marker_a5a970a159822321253492983b22fe19.bindTooltip(
+                `<div>
+                     TN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1e76dd74877da32e04c1fdf96366aa76 = L.circleMarker(
+                [40.8622608, -74.1399612],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_e13daf16753e5aa341d6ec53447758ef = L.popup({"maxWidth": 265});
+
+        
+            var html_259a3ec3910e40282a61c2e10da95b92 = $(`<div id="html_259a3ec3910e40282a61c2e10da95b92" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 431<br>     <b>Stage:</b> Operating<br>     <b>Type of Contract:</b> PPA<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Passaic<br>     <b>State:</b> NJ<br>              <img src="https://www.dropbox.com/scl/fi/roximi5iq8e8c1reksrjg/ShopRite-Passaic.jpg?rlkey=10b0p4n18353t74xqs0jye2wy&raw=1" alt="photo" style="max-width:100%; max-height:100%;">         </div></div>`)[0];
+            popup_e13daf16753e5aa341d6ec53447758ef.setContent(html_259a3ec3910e40282a61c2e10da95b92);
+        
+
+        circle_marker_1e76dd74877da32e04c1fdf96366aa76.bindPopup(popup_e13daf16753e5aa341d6ec53447758ef)
+        ;
+
+        
+    
+    
+            circle_marker_1e76dd74877da32e04c1fdf96366aa76.bindTooltip(
+                `<div>
+                     NJ
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e4c0dc22068d3778d746435da3f68047 = L.circleMarker(
+                [42.2391966, -71.48984271],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_a4f11c959459250acc762eaebaad6bef = L.popup({"maxWidth": 265});
+
+        
+            var html_1bdbc1dfe272423170120ee1c2209e16 = $(`<div id="html_1bdbc1dfe272423170120ee1c2209e16" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 713<br>     <b>Stage:</b> Operating<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Religious<br>     <b>City:</b> Hopkinton<br>     <b>State:</b> MA<br>              <img src="https://www.dropbox.com/scl/fi/ld3viyh0azrkhdr1w1sna/Hopkington-church.jpg?rlkey=3zy73n2rf19ddfa4mk95k8jsn&raw=1" alt="photo" style="max-width:100%; max-height:100%;">         </div></div>`)[0];
+            popup_a4f11c959459250acc762eaebaad6bef.setContent(html_1bdbc1dfe272423170120ee1c2209e16);
+        
+
+        circle_marker_e4c0dc22068d3778d746435da3f68047.bindPopup(popup_a4f11c959459250acc762eaebaad6bef)
+        ;
+
+        
+    
+    
+            circle_marker_e4c0dc22068d3778d746435da3f68047.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_4a0650cfd08d39fa9cf06ce6808f8bf9 = L.circleMarker(
+                [42.29649815, -71.43137593],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_e1db7c027ebfc9cfc63edf676c19ee5d = L.popup({"maxWidth": 265});
+
+        
+            var html_6a7e5b0348d936cf829939cc3d9d70fc = $(`<div id="html_6a7e5b0348d936cf829939cc3d9d70fc" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 305<br>     <b>Stage:</b> Operating<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Religious<br>     <b>City:</b> Framingham<br>     <b>State:</b> MA<br>              <img src="https://www.dropbox.com/scl/fi/4ri7yldbqkvjtwjs4f4ew/st-andrews-framingham.jpg?rlkey=0g1ae086gv2hdu54tushsxz93&raw=1" alt="photo" style="max-width:100%; max-height:100%;">         </div></div>`)[0];
+            popup_e1db7c027ebfc9cfc63edf676c19ee5d.setContent(html_6a7e5b0348d936cf829939cc3d9d70fc);
+        
+
+        circle_marker_4a0650cfd08d39fa9cf06ce6808f8bf9.bindPopup(popup_e1db7c027ebfc9cfc63edf676c19ee5d)
+        ;
+
+        
+    
+    
+            circle_marker_4a0650cfd08d39fa9cf06ce6808f8bf9.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_edb6490eecef80881371774fe982a8d6 = L.circleMarker(
+                [42.29224139, -71.20017666],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_9ce33434d06c6a9f6dd6b55bfa79a366 = L.popup({"maxWidth": 265});
+
+        
+            var html_9f13d2442ead0c182b4cfd95133934ad = $(`<div id="html_9f13d2442ead0c182b4cfd95133934ad" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 344<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> PPA<br>     <b>Property Type:</b> Office<br>     <b>City:</b> Newton<br>     <b>State:</b> MA<br>     </div></div>`)[0];
+            popup_9ce33434d06c6a9f6dd6b55bfa79a366.setContent(html_9f13d2442ead0c182b4cfd95133934ad);
+        
+
+        circle_marker_edb6490eecef80881371774fe982a8d6.bindPopup(popup_9ce33434d06c6a9f6dd6b55bfa79a366)
+        ;
+
+        
+    
+    
+            circle_marker_edb6490eecef80881371774fe982a8d6.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_62c9876c4c59521da7438dc62a5d3955 = L.circleMarker(
+                [42.29115889, -71.19814868],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_b39cdb880c0bda530f1727c29b95c3e8 = L.popup({"maxWidth": 265});
+
+        
+            var html_c9b760701052a1c608cb510654632f0c = $(`<div id="html_c9b760701052a1c608cb510654632f0c" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 719<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Office<br>     <b>City:</b> Newton<br>     <b>State:</b> MA<br>     </div></div>`)[0];
+            popup_b39cdb880c0bda530f1727c29b95c3e8.setContent(html_c9b760701052a1c608cb510654632f0c);
+        
+
+        circle_marker_62c9876c4c59521da7438dc62a5d3955.bindPopup(popup_b39cdb880c0bda530f1727c29b95c3e8)
+        ;
+
+        
+    
+    
+            circle_marker_62c9876c4c59521da7438dc62a5d3955.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_945c047b543456b1cb05d0ab17561a5c = L.circleMarker(
+                [42.29166618, -71.20081771],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_540367bf29b6c4770d3fa9dcc48456de = L.popup({"maxWidth": 265});
+
+        
+            var html_cfe805d6333faf9e043b17c72d18514e = $(`<div id="html_cfe805d6333faf9e043b17c72d18514e" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 728<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Office<br>     <b>City:</b> Newton<br>     <b>State:</b> MA<br>     </div></div>`)[0];
+            popup_540367bf29b6c4770d3fa9dcc48456de.setContent(html_cfe805d6333faf9e043b17c72d18514e);
+        
+
+        circle_marker_945c047b543456b1cb05d0ab17561a5c.bindPopup(popup_540367bf29b6c4770d3fa9dcc48456de)
+        ;
+
+        
+    
+    
+            circle_marker_945c047b543456b1cb05d0ab17561a5c.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_22f49d9d00033fdb966683f0a0b8816a = L.circleMarker(
+                [42.29604105, -71.19883276],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_0d50e150b20bd25057c9ef40f8ba999d = L.popup({"maxWidth": 265});
+
+        
+            var html_bd774365e3f29784aac46be60271c3a3 = $(`<div id="html_bd774365e3f29784aac46be60271c3a3" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 76<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> PPA<br>     <b>Property Type:</b> Office<br>     <b>City:</b> Newton<br>     <b>State:</b> MA<br>     </div></div>`)[0];
+            popup_0d50e150b20bd25057c9ef40f8ba999d.setContent(html_bd774365e3f29784aac46be60271c3a3);
+        
+
+        circle_marker_22f49d9d00033fdb966683f0a0b8816a.bindPopup(popup_0d50e150b20bd25057c9ef40f8ba999d)
+        ;
+
+        
+    
+    
+            circle_marker_22f49d9d00033fdb966683f0a0b8816a.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c8de70faf7ec0d8e9ae3856baf850e29 = L.circleMarker(
+                [32.76403815, -117.0618693],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_cae2d923c6949fac6fe356ed84ac5670 = L.popup({"maxWidth": 265});
+
+        
+            var html_a6fde963fb1aa3fe0b1478e6c2245425 = $(`<div id="html_a6fde963fb1aa3fe0b1478e6c2245425" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 485<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Apartment<br>     <b>City:</b> San Diego<br>     <b>State:</b> CA<br>              <img src="https://www.dropbox.com/scl/fi/9ie6tivhcsn6vcu9iohr7/Core-Blvd-63-Roofs.png?rlkey=jb249wn5erosedodwngg9l5ea&raw=1" alt="photo" style="max-width:100%; max-height:100%;">         </div></div>`)[0];
+            popup_cae2d923c6949fac6fe356ed84ac5670.setContent(html_a6fde963fb1aa3fe0b1478e6c2245425);
+        
+
+        circle_marker_c8de70faf7ec0d8e9ae3856baf850e29.bindPopup(popup_cae2d923c6949fac6fe356ed84ac5670)
+        ;
+
+        
+    
+    
+            circle_marker_c8de70faf7ec0d8e9ae3856baf850e29.bindTooltip(
+                `<div>
+                     CA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d48fb0f4c75f9974cbfb8fe5108107e6 = L.circleMarker(
+                [42.25969291, -71.12857011],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_de01b4dc940659da6b2eff159b32be75 = L.popup({"maxWidth": 265});
+
+        
+            var html_eab01c443c08664fba388738b6b60d28 = $(`<div id="html_eab01c443c08664fba388738b6b60d28" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 126<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> PPA<br>     <b>Property Type:</b> Educational<br>     <b>City:</b> Hyde Park<br>     <b>State:</b> MA<br>     </div></div>`)[0];
+            popup_de01b4dc940659da6b2eff159b32be75.setContent(html_eab01c443c08664fba388738b6b60d28);
+        
+
+        circle_marker_d48fb0f4c75f9974cbfb8fe5108107e6.bindPopup(popup_de01b4dc940659da6b2eff159b32be75)
+        ;
+
+        
+    
+    
+            circle_marker_d48fb0f4c75f9974cbfb8fe5108107e6.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_9eec494f4c9761e5f8f05b1311c4b6c9 = L.circleMarker(
+                [42.29294636, -71.20183589],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_b691269d5b84f4746c28a8cf40bd65d4 = L.popup({"maxWidth": 265});
+
+        
+            var html_a560e7fcfdeebc9794ab9b84d199a396 = $(`<div id="html_a560e7fcfdeebc9794ab9b84d199a396" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 349<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Office<br>     <b>City:</b> Newton<br>     <b>State:</b> MA<br>     </div></div>`)[0];
+            popup_b691269d5b84f4746c28a8cf40bd65d4.setContent(html_a560e7fcfdeebc9794ab9b84d199a396);
+        
+
+        circle_marker_9eec494f4c9761e5f8f05b1311c4b6c9.bindPopup(popup_b691269d5b84f4746c28a8cf40bd65d4)
+        ;
+
+        
+    
+    
+            circle_marker_9eec494f4c9761e5f8f05b1311c4b6c9.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_06de1af7fa6ece2f0cca74249d4ac35e = L.circleMarker(
+                [42.27156434, -71.61795641],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_59b254730c8aaa9926437ca401eef4d4 = L.popup({"maxWidth": 265});
+
+        
+            var html_37bb2cc7a1f42909b3599349b0a03690 = $(`<div id="html_37bb2cc7a1f42909b3599349b0a03690" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 95<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Religious<br>     <b>City:</b> Westborough<br>     <b>State:</b> MA<br>     </div></div>`)[0];
+            popup_59b254730c8aaa9926437ca401eef4d4.setContent(html_37bb2cc7a1f42909b3599349b0a03690);
+        
+
+        circle_marker_06de1af7fa6ece2f0cca74249d4ac35e.bindPopup(popup_59b254730c8aaa9926437ca401eef4d4)
+        ;
+
+        
+    
+    
+            circle_marker_06de1af7fa6ece2f0cca74249d4ac35e.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_595346e91b22019439005f2c47f0ac2e = L.circleMarker(
+                [32.13469335, -81.24323252],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_67755060647829271251cfef754344f3 = L.popup({"maxWidth": 265});
+
+        
+            var html_be3ef5c1f6fd0d7edb5ff972aa67a474 = $(`<div id="html_be3ef5c1f6fd0d7edb5ff972aa67a474" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 1463<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Pooler<br>     <b>State:</b> GA<br>     </div></div>`)[0];
+            popup_67755060647829271251cfef754344f3.setContent(html_be3ef5c1f6fd0d7edb5ff972aa67a474);
+        
+
+        circle_marker_595346e91b22019439005f2c47f0ac2e.bindPopup(popup_67755060647829271251cfef754344f3)
+        ;
+
+        
+    
+    
+            circle_marker_595346e91b22019439005f2c47f0ac2e.bindTooltip(
+                `<div>
+                     GA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ef820506a90039d6c23c80ff1a65add7 = L.circleMarker(
+                [32.87395658, -80.01870376],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_419c73e3579e9b3ccd97da4a3726ba3d = L.popup({"maxWidth": 265});
+
+        
+            var html_6c02d43f6781c62869672b523f8a25b5 = $(`<div id="html_6c02d43f6781c62869672b523f8a25b5" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 2303<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> North Charleston<br>     <b>State:</b> SC<br>     </div></div>`)[0];
+            popup_419c73e3579e9b3ccd97da4a3726ba3d.setContent(html_6c02d43f6781c62869672b523f8a25b5);
+        
+
+        circle_marker_ef820506a90039d6c23c80ff1a65add7.bindPopup(popup_419c73e3579e9b3ccd97da4a3726ba3d)
+        ;
+
+        
+    
+    
+            circle_marker_ef820506a90039d6c23c80ff1a65add7.bindTooltip(
+                `<div>
+                     SC
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ba0c88decc9ccbf2cceecd60bd98bbe5 = L.circleMarker(
+                [32.76376608, -117.0615852],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_5237a9b21244beb94e9bf1e4bc2e8c7d = L.popup({"maxWidth": 265});
+
+        
+            var html_3a4002cc77e6c256461d5738becf3905 = $(`<div id="html_3a4002cc77e6c256461d5738becf3905" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 1135<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Apartment<br>     <b>City:</b> San Diego<br>     <b>State:</b> CA<br>     </div></div>`)[0];
+            popup_5237a9b21244beb94e9bf1e4bc2e8c7d.setContent(html_3a4002cc77e6c256461d5738becf3905);
+        
+
+        circle_marker_ba0c88decc9ccbf2cceecd60bd98bbe5.bindPopup(popup_5237a9b21244beb94e9bf1e4bc2e8c7d)
+        ;
+
+        
+    
+    
+            circle_marker_ba0c88decc9ccbf2cceecd60bd98bbe5.bindTooltip(
+                `<div>
+                     CA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8591183d4057663b9a06f9660a1c42ae = L.circleMarker(
+                [41.68895374, -73.89691363],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_286a614d503ea2f175c4a697db22c014 = L.popup({"maxWidth": 265});
+
+        
+            var html_3ef43491d6535e6658bb32145ac9d51f = $(`<div id="html_3ef43491d6535e6658bb32145ac9d51f" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 303<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Educational<br>     <b>City:</b> Poughkeepsie<br>     <b>State:</b> NY<br>     </div></div>`)[0];
+            popup_286a614d503ea2f175c4a697db22c014.setContent(html_3ef43491d6535e6658bb32145ac9d51f);
+        
+
+        circle_marker_8591183d4057663b9a06f9660a1c42ae.bindPopup(popup_286a614d503ea2f175c4a697db22c014)
+        ;
+
+        
+    
+    
+            circle_marker_8591183d4057663b9a06f9660a1c42ae.bindTooltip(
+                `<div>
+                     NY
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_eb4aaaa6dfa91702bf89eb1cd40caff9 = L.circleMarker(
+                [42.44465429, -73.25598987],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_3ccd2cd446c1be1398ec518586970754 = L.popup({"maxWidth": 265});
+
+        
+            var html_669c2ce7e7a37555403e5bfc241973d0 = $(`<div id="html_669c2ce7e7a37555403e5bfc241973d0" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 179<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Feed-in Tariff<br>     <b>Property Type:</b> Industrial<br>     <b>City:</b> Pittsfield<br>     <b>State:</b> MA<br>     </div></div>`)[0];
+            popup_3ccd2cd446c1be1398ec518586970754.setContent(html_669c2ce7e7a37555403e5bfc241973d0);
+        
+
+        circle_marker_eb4aaaa6dfa91702bf89eb1cd40caff9.bindPopup(popup_3ccd2cd446c1be1398ec518586970754)
+        ;
+
+        
+    
+    
+            circle_marker_eb4aaaa6dfa91702bf89eb1cd40caff9.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a9f00b6a10251af7a633f26452511d01 = L.circleMarker(
+                [42.49533185, -71.19110774],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_84a74b5d19b3a1cce26298001d10cda5 = L.popup({"maxWidth": 265});
+
+        
+            var html_802088b37cb120e91de463349b043583 = $(`<div id="html_802088b37cb120e91de463349b043583" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 287<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Office<br>     <b>City:</b> Burlington<br>     <b>State:</b> MA<br>     </div></div>`)[0];
+            popup_84a74b5d19b3a1cce26298001d10cda5.setContent(html_802088b37cb120e91de463349b043583);
+        
+
+        circle_marker_a9f00b6a10251af7a633f26452511d01.bindPopup(popup_84a74b5d19b3a1cce26298001d10cda5)
+        ;
+
+        
+    
+    
+            circle_marker_a9f00b6a10251af7a633f26452511d01.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b972fe2ed97c5b12b18c19ed22e477ae = L.circleMarker(
+                [34.41645249, -119.8629971],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_c07f2b66b98673a81f3d4e84dbd11923 = L.popup({"maxWidth": 265});
+
+        
+            var html_e189efec4075f70cbad5de136be0a0ec = $(`<div id="html_e189efec4075f70cbad5de136be0a0ec" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 526<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Apartment<br>     <b>City:</b> Isla Vista<br>     <b>State:</b> CA<br>     </div></div>`)[0];
+            popup_c07f2b66b98673a81f3d4e84dbd11923.setContent(html_e189efec4075f70cbad5de136be0a0ec);
+        
+
+        circle_marker_b972fe2ed97c5b12b18c19ed22e477ae.bindPopup(popup_c07f2b66b98673a81f3d4e84dbd11923)
+        ;
+
+        
+    
+    
+            circle_marker_b972fe2ed97c5b12b18c19ed22e477ae.bindTooltip(
+                `<div>
+                     CA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0ec45343e244a7f118a4f3546782f752 = L.circleMarker(
+                [42.48861148, -71.19618754],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_1f815c566916a271f7e8ffbd75ad9f0e = L.popup({"maxWidth": 265});
+
+        
+            var html_db15eed0bc2c18587c85d26d932c1ec0 = $(`<div id="html_db15eed0bc2c18587c85d26d932c1ec0" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">          <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Office<br>     <b>City:</b> Burlington<br>     <b>State:</b> MA<br>     </div></div>`)[0];
+            popup_1f815c566916a271f7e8ffbd75ad9f0e.setContent(html_db15eed0bc2c18587c85d26d932c1ec0);
+        
+
+        circle_marker_0ec45343e244a7f118a4f3546782f752.bindPopup(popup_1f815c566916a271f7e8ffbd75ad9f0e)
+        ;
+
+        
+    
+    
+            circle_marker_0ec45343e244a7f118a4f3546782f752.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ee85623818a584264b9d070a4c3f4c5c = L.circleMarker(
+                [42.25104654, -71.81011313],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_e6524d03e10b76cf363748aa3836ef47 = L.popup({"maxWidth": 265});
+
+        
+            var html_e5e291f724d05d613a89589802022645 = $(`<div id="html_e5e291f724d05d613a89589802022645" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 121<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Feed-in Tariff<br>     <b>Property Type:</b> Industrial<br>     <b>City:</b> Worcester<br>     <b>State:</b> MA<br>     </div></div>`)[0];
+            popup_e6524d03e10b76cf363748aa3836ef47.setContent(html_e5e291f724d05d613a89589802022645);
+        
+
+        circle_marker_ee85623818a584264b9d070a4c3f4c5c.bindPopup(popup_e6524d03e10b76cf363748aa3836ef47)
+        ;
+
+        
+    
+    
+            circle_marker_ee85623818a584264b9d070a4c3f4c5c.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_fde1333307052ea2f5f2f816b761054d = L.circleMarker(
+                [42.08139775, -71.23017929],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_0426d2d95bc0e2b92f39396cc5b387cf = L.popup({"maxWidth": 265});
+
+        
+            var html_a83ca1aa6dffc12a11093e8e07961cc1 = $(`<div id="html_a83ca1aa6dffc12a11093e8e07961cc1" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 300<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Educational<br>     <b>City:</b> Foxborough<br>     <b>State:</b> MA<br>     </div></div>`)[0];
+            popup_0426d2d95bc0e2b92f39396cc5b387cf.setContent(html_a83ca1aa6dffc12a11093e8e07961cc1);
+        
+
+        circle_marker_fde1333307052ea2f5f2f816b761054d.bindPopup(popup_0426d2d95bc0e2b92f39396cc5b387cf)
+        ;
+
+        
+    
+    
+            circle_marker_fde1333307052ea2f5f2f816b761054d.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e99f5f90be0f3f744e6de6239a7bd817 = L.circleMarker(
+                [42.07140999, -71.01920162],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_84250e028c4ed7f1cb27cc3fdbbb4509 = L.popup({"maxWidth": 265});
+
+        
+            var html_ca5422c365ae887e7d7d0668838f5d85 = $(`<div id="html_ca5422c365ae887e7d7d0668838f5d85" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 130<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Brockton<br>     <b>State:</b> MA<br>     </div></div>`)[0];
+            popup_84250e028c4ed7f1cb27cc3fdbbb4509.setContent(html_ca5422c365ae887e7d7d0668838f5d85);
+        
+
+        circle_marker_e99f5f90be0f3f744e6de6239a7bd817.bindPopup(popup_84250e028c4ed7f1cb27cc3fdbbb4509)
+        ;
+
+        
+    
+    
+            circle_marker_e99f5f90be0f3f744e6de6239a7bd817.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_437760cc6bc398f97d4939daddf6a827 = L.circleMarker(
+                [42.45999505, -71.39004665],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_09986201bec3109d9560ae8801df5a24 = L.popup({"maxWidth": 265});
+
+        
+            var html_40049d2f58e353b508efd7d0fb86bfa5 = $(`<div id="html_40049d2f58e353b508efd7d0fb86bfa5" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 720<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> PPA<br>     <b>Property Type:</b> Office<br>     <b>City:</b> Concord<br>     <b>State:</b> MA<br>     </div></div>`)[0];
+            popup_09986201bec3109d9560ae8801df5a24.setContent(html_40049d2f58e353b508efd7d0fb86bfa5);
+        
+
+        circle_marker_437760cc6bc398f97d4939daddf6a827.bindPopup(popup_09986201bec3109d9560ae8801df5a24)
+        ;
+
+        
+    
+    
+            circle_marker_437760cc6bc398f97d4939daddf6a827.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a042f26aac7b8fbb030f237024048f4a = L.circleMarker(
+                [34.20041781, -118.369477],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_aaf828fa2a99699bfb0011b57f02ae34 = L.popup({"maxWidth": 265});
+
+        
+            var html_a6005602899430bdd3aad497520e4bdb = $(`<div id="html_a6005602899430bdd3aad497520e4bdb" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 438<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Burbank<br>     <b>State:</b> CA<br>     </div></div>`)[0];
+            popup_aaf828fa2a99699bfb0011b57f02ae34.setContent(html_a6005602899430bdd3aad497520e4bdb);
+        
+
+        circle_marker_a042f26aac7b8fbb030f237024048f4a.bindPopup(popup_aaf828fa2a99699bfb0011b57f02ae34)
+        ;
+
+        
+    
+    
+            circle_marker_a042f26aac7b8fbb030f237024048f4a.bindTooltip(
+                `<div>
+                     CA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e0987f24f3e3f76e9f0ce570094f3d13 = L.circleMarker(
+                [33.56249802, -117.671208],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_49e1ada748a7fbb27df6017ccb44505e = L.popup({"maxWidth": 265});
+
+        
+            var html_b7ee221635cc048b32f0938b7941f755 = $(`<div id="html_b7ee221635cc048b32f0938b7941f755" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 332<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Mission Viejo<br>     <b>State:</b> CA<br>     </div></div>`)[0];
+            popup_49e1ada748a7fbb27df6017ccb44505e.setContent(html_b7ee221635cc048b32f0938b7941f755);
+        
+
+        circle_marker_e0987f24f3e3f76e9f0ce570094f3d13.bindPopup(popup_49e1ada748a7fbb27df6017ccb44505e)
+        ;
+
+        
+    
+    
+            circle_marker_e0987f24f3e3f76e9f0ce570094f3d13.bindTooltip(
+                `<div>
+                     CA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_17851c62633bb0f0469775013174c291 = L.circleMarker(
+                [32.86908287, -117.2326049],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_64209b0f0d52afe0cc63584f1770af42 = L.popup({"maxWidth": 265});
+
+        
+            var html_823b3c83263e3e93dfb432f06229a5e3 = $(`<div id="html_823b3c83263e3e93dfb432f06229a5e3" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 652<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> La Jolla<br>     <b>State:</b> CA<br>     </div></div>`)[0];
+            popup_64209b0f0d52afe0cc63584f1770af42.setContent(html_823b3c83263e3e93dfb432f06229a5e3);
+        
+
+        circle_marker_17851c62633bb0f0469775013174c291.bindPopup(popup_64209b0f0d52afe0cc63584f1770af42)
+        ;
+
+        
+    
+    
+            circle_marker_17851c62633bb0f0469775013174c291.bindTooltip(
+                `<div>
+                     CA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_14c79c58c8fdf8b6fc89507b1c6edf96 = L.circleMarker(
+                [33.47502634, -117.6855082],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_f362e789e2bdc44d684b28351bf10383 = L.popup({"maxWidth": 265});
+
+        
+            var html_51a6a74dceb654707ccfdc6001e18ac6 = $(`<div id="html_51a6a74dceb654707ccfdc6001e18ac6" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 106<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Dana Point<br>     <b>State:</b> CA<br>     </div></div>`)[0];
+            popup_f362e789e2bdc44d684b28351bf10383.setContent(html_51a6a74dceb654707ccfdc6001e18ac6);
+        
+
+        circle_marker_14c79c58c8fdf8b6fc89507b1c6edf96.bindPopup(popup_f362e789e2bdc44d684b28351bf10383)
+        ;
+
+        
+    
+    
+            circle_marker_14c79c58c8fdf8b6fc89507b1c6edf96.bindTooltip(
+                `<div>
+                     CA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_aa84a7ae5a62d2d23a23f65f3bf1aa0c = L.circleMarker(
+                [33.71632844, -118.0043505],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_81745c7bf259999ca2e7fa1ff4d0d4fd = L.popup({"maxWidth": 265});
+
+        
+            var html_795fe4ee728ba6add221fca437fd6915 = $(`<div id="html_795fe4ee728ba6add221fca437fd6915" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 592<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Huntington Beach<br>     <b>State:</b> CA<br>     </div></div>`)[0];
+            popup_81745c7bf259999ca2e7fa1ff4d0d4fd.setContent(html_795fe4ee728ba6add221fca437fd6915);
+        
+
+        circle_marker_aa84a7ae5a62d2d23a23f65f3bf1aa0c.bindPopup(popup_81745c7bf259999ca2e7fa1ff4d0d4fd)
+        ;
+
+        
+    
+    
+            circle_marker_aa84a7ae5a62d2d23a23f65f3bf1aa0c.bindTooltip(
+                `<div>
+                     CA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_3226e8c9422a1f3426784722191cb127 = L.circleMarker(
+                [33.64690813, -117.6876701],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_ab540e2b2b2a1bbfc734beb7e6724e96 = L.popup({"maxWidth": 265});
+
+        
+            var html_3ac92c43caf2a0bec50c8fdd730fa4da = $(`<div id="html_3ac92c43caf2a0bec50c8fdd730fa4da" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 608<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Lake Forest<br>     <b>State:</b> CA<br>     </div></div>`)[0];
+            popup_ab540e2b2b2a1bbfc734beb7e6724e96.setContent(html_3ac92c43caf2a0bec50c8fdd730fa4da);
+        
+
+        circle_marker_3226e8c9422a1f3426784722191cb127.bindPopup(popup_ab540e2b2b2a1bbfc734beb7e6724e96)
+        ;
+
+        
+    
+    
+            circle_marker_3226e8c9422a1f3426784722191cb127.bindTooltip(
+                `<div>
+                     CA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_787c05b7cdd50f9c1dce1cee8287c412 = L.circleMarker(
+                [33.71225934, -117.7604665],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_65a905727032995d744d0c665b1d37e4 = L.popup({"maxWidth": 265});
+
+        
+            var html_684c491784feaa84f19eba185c3b0f5a = $(`<div id="html_684c491784feaa84f19eba185c3b0f5a" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 568<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Irvine<br>     <b>State:</b> CA<br>     </div></div>`)[0];
+            popup_65a905727032995d744d0c665b1d37e4.setContent(html_684c491784feaa84f19eba185c3b0f5a);
+        
+
+        circle_marker_787c05b7cdd50f9c1dce1cee8287c412.bindPopup(popup_65a905727032995d744d0c665b1d37e4)
+        ;
+
+        
+    
+    
+            circle_marker_787c05b7cdd50f9c1dce1cee8287c412.bindTooltip(
+                `<div>
+                     CA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e81d9c3ab8cb29b3e3164d36eaf65ba3 = L.circleMarker(
+                [33.67114139, -117.9523887],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_bdfbfc4accd2b49750daaafb797b015d = L.popup({"maxWidth": 265});
+
+        
+            var html_f6d09612fbdd6f05c4d94d2e6069c3e6 = $(`<div id="html_f6d09612fbdd6f05c4d94d2e6069c3e6" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 427<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Huntington Beach<br>     <b>State:</b> CA<br>     </div></div>`)[0];
+            popup_bdfbfc4accd2b49750daaafb797b015d.setContent(html_f6d09612fbdd6f05c4d94d2e6069c3e6);
+        
+
+        circle_marker_e81d9c3ab8cb29b3e3164d36eaf65ba3.bindPopup(popup_bdfbfc4accd2b49750daaafb797b015d)
+        ;
+
+        
+    
+    
+            circle_marker_e81d9c3ab8cb29b3e3164d36eaf65ba3.bindTooltip(
+                `<div>
+                     CA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f714f02c547ec57f5f72343f4d8ee7a7 = L.circleMarker(
+                [34.28667789, -118.71639],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_85f7bb06ec992f00746c1fa9f408edf3 = L.popup({"maxWidth": 265});
+
+        
+            var html_0c33914c1336a814cb98cc738f4f4367 = $(`<div id="html_0c33914c1336a814cb98cc738f4f4367" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 464<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Simi Valley<br>     <b>State:</b> CA<br>     </div></div>`)[0];
+            popup_85f7bb06ec992f00746c1fa9f408edf3.setContent(html_0c33914c1336a814cb98cc738f4f4367);
+        
+
+        circle_marker_f714f02c547ec57f5f72343f4d8ee7a7.bindPopup(popup_85f7bb06ec992f00746c1fa9f408edf3)
+        ;
+
+        
+    
+    
+            circle_marker_f714f02c547ec57f5f72343f4d8ee7a7.bindTooltip(
+                `<div>
+                     CA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_7d0a58dd18b234a317414459a4c4c19f = L.circleMarker(
+                [33.80343868, -118.1667901],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_418e71e6700714da3157b399c6e45a32 = L.popup({"maxWidth": 265});
+
+        
+            var html_c4b92874b3e605422a2ec0db74cd6b14 = $(`<div id="html_c4b92874b3e605422a2ec0db74cd6b14" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 810<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Signal Hill<br>     <b>State:</b> CA<br>     </div></div>`)[0];
+            popup_418e71e6700714da3157b399c6e45a32.setContent(html_c4b92874b3e605422a2ec0db74cd6b14);
+        
+
+        circle_marker_7d0a58dd18b234a317414459a4c4c19f.bindPopup(popup_418e71e6700714da3157b399c6e45a32)
+        ;
+
+        
+    
+    
+            circle_marker_7d0a58dd18b234a317414459a4c4c19f.bindTooltip(
+                `<div>
+                     CA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_4156ccad33ae211d8b53df9bcb38ef5c = L.circleMarker(
+                [42.809662, -85.67114542],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_c492f4440d4b4bb2e19d7613d8423ffe = L.popup({"maxWidth": 265});
+
+        
+            var html_894395d21f1adf9fac8d6ba3f5352e6d = $(`<div id="html_894395d21f1adf9fac8d6ba3f5352e6d" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">          <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Byron Center<br>     <b>State:</b> MI<br>     </div></div>`)[0];
+            popup_c492f4440d4b4bb2e19d7613d8423ffe.setContent(html_894395d21f1adf9fac8d6ba3f5352e6d);
+        
+
+        circle_marker_4156ccad33ae211d8b53df9bcb38ef5c.bindPopup(popup_c492f4440d4b4bb2e19d7613d8423ffe)
+        ;
+
+        
+    
+    
+            circle_marker_4156ccad33ae211d8b53df9bcb38ef5c.bindTooltip(
+                `<div>
+                     MI
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e57a82ee03fd15b0243944dd06883a14 = L.circleMarker(
+                [40.21640709, -80.21162308],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_a9da7384d9c22cda709480be483bf228 = L.popup({"maxWidth": 265});
+
+        
+            var html_9025145b3fdd5f04519da2bf3545fb12 = $(`<div id="html_9025145b3fdd5f04519da2bf3545fb12" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">          <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Washington<br>     <b>State:</b> PA<br>     </div></div>`)[0];
+            popup_a9da7384d9c22cda709480be483bf228.setContent(html_9025145b3fdd5f04519da2bf3545fb12);
+        
+
+        circle_marker_e57a82ee03fd15b0243944dd06883a14.bindPopup(popup_a9da7384d9c22cda709480be483bf228)
+        ;
+
+        
+    
+    
+            circle_marker_e57a82ee03fd15b0243944dd06883a14.bindTooltip(
+                `<div>
+                     PA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_14565b6a1aa467e065aef6a247a10e60 = L.circleMarker(
+                [33.784229, -78.77506716],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_1345a9409978249254b824d4099a5ba1 = L.popup({"maxWidth": 265});
+
+        
+            var html_899ad82e54e86f4f70bb8ed7bcca0298 = $(`<div id="html_899ad82e54e86f4f70bb8ed7bcca0298" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">          <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Myrtle Beach<br>     <b>State:</b> SC<br>     </div></div>`)[0];
+            popup_1345a9409978249254b824d4099a5ba1.setContent(html_899ad82e54e86f4f70bb8ed7bcca0298);
+        
+
+        circle_marker_14565b6a1aa467e065aef6a247a10e60.bindPopup(popup_1345a9409978249254b824d4099a5ba1)
+        ;
+
+        
+    
+    
+            circle_marker_14565b6a1aa467e065aef6a247a10e60.bindTooltip(
+                `<div>
+                     SC
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c23236315c262d5566078a5d66d68dd3 = L.circleMarker(
+                [40.76911662, -73.99641118],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_fb15ad68b73fbc86b3280a3663136a0b = L.popup({"maxWidth": 265});
+
+        
+            var html_f808ea0e504928c0363e276c840c24c5 = $(`<div id="html_f808ea0e504928c0363e276c840c24c5" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">          <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> New York<br>     <b>State:</b> NY<br>     </div></div>`)[0];
+            popup_fb15ad68b73fbc86b3280a3663136a0b.setContent(html_f808ea0e504928c0363e276c840c24c5);
+        
+
+        circle_marker_c23236315c262d5566078a5d66d68dd3.bindPopup(popup_fb15ad68b73fbc86b3280a3663136a0b)
+        ;
+
+        
+    
+    
+            circle_marker_c23236315c262d5566078a5d66d68dd3.bindTooltip(
+                `<div>
+                     NY
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_24e1dc808cfc7b0a250ecfadd6469d19 = L.circleMarker(
+                [40.91700108, -73.77874706],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_51e44772cfaee4c4eacc4f7a05e3f252 = L.popup({"maxWidth": 265});
+
+        
+            var html_62929f9c3d7518fed21becc36cede2bb = $(`<div id="html_62929f9c3d7518fed21becc36cede2bb" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">          <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> PPA<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> New Rochelle<br>     <b>State:</b> NY<br>     </div></div>`)[0];
+            popup_51e44772cfaee4c4eacc4f7a05e3f252.setContent(html_62929f9c3d7518fed21becc36cede2bb);
+        
+
+        circle_marker_24e1dc808cfc7b0a250ecfadd6469d19.bindPopup(popup_51e44772cfaee4c4eacc4f7a05e3f252)
+        ;
+
+        
+    
+    
+            circle_marker_24e1dc808cfc7b0a250ecfadd6469d19.bindTooltip(
+                `<div>
+                     NY
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_436080975011cbfe50a66eb2548c97ce = L.circleMarker(
+                [41.06654353, -73.81267997],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_3781edb197f106aced647d43890b6ac2 = L.popup({"maxWidth": 265});
+
+        
+            var html_43b6321b50758631af4aeb8525c60ca2 = $(`<div id="html_43b6321b50758631af4aeb8525c60ca2" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 640<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> PPA<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Elmsford<br>     <b>State:</b> NY<br>     </div></div>`)[0];
+            popup_3781edb197f106aced647d43890b6ac2.setContent(html_43b6321b50758631af4aeb8525c60ca2);
+        
+
+        circle_marker_436080975011cbfe50a66eb2548c97ce.bindPopup(popup_3781edb197f106aced647d43890b6ac2)
+        ;
+
+        
+    
+    
+            circle_marker_436080975011cbfe50a66eb2548c97ce.bindTooltip(
+                `<div>
+                     NY
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ce3bc323c2c2644983bfdcb575caf05f = L.circleMarker(
+                [33.63575216, -117.9137662],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_e9601c82789bde1616b002edca0c2f85 = L.popup({"maxWidth": 265});
+
+        
+            var html_42baf951f63a055e39767945f9efa3d9 = $(`<div id="html_42baf951f63a055e39767945f9efa3d9" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 235<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Apartment<br>     <b>City:</b> Costa Mesa<br>     <b>State:</b> CA<br>     </div></div>`)[0];
+            popup_e9601c82789bde1616b002edca0c2f85.setContent(html_42baf951f63a055e39767945f9efa3d9);
+        
+
+        circle_marker_ce3bc323c2c2644983bfdcb575caf05f.bindPopup(popup_e9601c82789bde1616b002edca0c2f85)
+        ;
+
+        
+    
+    
+            circle_marker_ce3bc323c2c2644983bfdcb575caf05f.bindTooltip(
+                `<div>
+                     CA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_162ddc09a481dd7a42316128b7fa2429 = L.circleMarker(
+                [33.67779373, -117.6746683],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_c48a93911bdb0aeabfa2fcaa571295a2 = L.popup({"maxWidth": 265});
+
+        
+            var html_b8be038926332b1ff661aa03a8bd16f0 = $(`<div id="html_b8be038926332b1ff661aa03a8bd16f0" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 1012<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Apartment<br>     <b>City:</b> Lake Forest<br>     <b>State:</b> CA<br>     </div></div>`)[0];
+            popup_c48a93911bdb0aeabfa2fcaa571295a2.setContent(html_b8be038926332b1ff661aa03a8bd16f0);
+        
+
+        circle_marker_162ddc09a481dd7a42316128b7fa2429.bindPopup(popup_c48a93911bdb0aeabfa2fcaa571295a2)
+        ;
+
+        
+    
+    
+            circle_marker_162ddc09a481dd7a42316128b7fa2429.bindTooltip(
+                `<div>
+                     CA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1af52bfc409d59bde456f6fc250511ac = L.circleMarker(
+                [33.95328878, -117.6828244],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_dc0125849dff19a3a8aa9148247597f0 = L.popup({"maxWidth": 265});
+
+        
+            var html_89db6a5aca34e0715bfe746d327db570 = $(`<div id="html_89db6a5aca34e0715bfe746d327db570" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 552<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Apartment<br>     <b>City:</b> Chino Hills<br>     <b>State:</b> CA<br>     </div></div>`)[0];
+            popup_dc0125849dff19a3a8aa9148247597f0.setContent(html_89db6a5aca34e0715bfe746d327db570);
+        
+
+        circle_marker_1af52bfc409d59bde456f6fc250511ac.bindPopup(popup_dc0125849dff19a3a8aa9148247597f0)
+        ;
+
+        
+    
+    
+            circle_marker_1af52bfc409d59bde456f6fc250511ac.bindTooltip(
+                `<div>
+                     CA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_9508cbdcfd16f31eeb2952c490fa5ea3 = L.circleMarker(
+                [34.23018651, -118.9997998],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_b496f52df306ff1da9a700871e395dbe = L.popup({"maxWidth": 265});
+
+        
+            var html_05dcf28a42619b2482a526269e1528bb = $(`<div id="html_05dcf28a42619b2482a526269e1528bb" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 382<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Apartment<br>     <b>City:</b> Camarillo<br>     <b>State:</b> CA<br>     </div></div>`)[0];
+            popup_b496f52df306ff1da9a700871e395dbe.setContent(html_05dcf28a42619b2482a526269e1528bb);
+        
+
+        circle_marker_9508cbdcfd16f31eeb2952c490fa5ea3.bindPopup(popup_b496f52df306ff1da9a700871e395dbe)
+        ;
+
+        
+    
+    
+            circle_marker_9508cbdcfd16f31eeb2952c490fa5ea3.bindTooltip(
+                `<div>
+                     CA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_49d660842f1e70086d5686c27747c280 = L.circleMarker(
+                [37.3886195, -121.9937817],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_a2ad4084d3867d5222da050e28f80e3f = L.popup({"maxWidth": 265});
+
+        
+            var html_4ac912bce549fe6a573d674e62edc6ca = $(`<div id="html_4ac912bce549fe6a573d674e62edc6ca" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 375<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Apartment<br>     <b>City:</b> Sunnyvale<br>     <b>State:</b> CA<br>     </div></div>`)[0];
+            popup_a2ad4084d3867d5222da050e28f80e3f.setContent(html_4ac912bce549fe6a573d674e62edc6ca);
+        
+
+        circle_marker_49d660842f1e70086d5686c27747c280.bindPopup(popup_a2ad4084d3867d5222da050e28f80e3f)
+        ;
+
+        
+    
+    
+            circle_marker_49d660842f1e70086d5686c27747c280.bindTooltip(
+                `<div>
+                     CA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_cb4070d569f4ff6390d9a6217d2c83af = L.circleMarker(
+                [37.49356711, -121.9270477],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_3d11a4cb65b13dcab8dab5f9d6328f0c = L.popup({"maxWidth": 265});
+
+        
+            var html_5590d04aa780e610ed194895f43ca23d = $(`<div id="html_5590d04aa780e610ed194895f43ca23d" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 403<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Apartment<br>     <b>City:</b> Fremont<br>     <b>State:</b> CA<br>     </div></div>`)[0];
+            popup_3d11a4cb65b13dcab8dab5f9d6328f0c.setContent(html_5590d04aa780e610ed194895f43ca23d);
+        
+
+        circle_marker_cb4070d569f4ff6390d9a6217d2c83af.bindPopup(popup_3d11a4cb65b13dcab8dab5f9d6328f0c)
+        ;
+
+        
+    
+    
+            circle_marker_cb4070d569f4ff6390d9a6217d2c83af.bindTooltip(
+                `<div>
+                     CA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8eb9f1a9c29ee7979618a2725d31a5c2 = L.circleMarker(
+                [33.71398147, -118.0119994],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_009395785b27a37c5cf1b6dddc67e690 = L.popup({"maxWidth": 265});
+
+        
+            var html_e3677ca70d7a76aa26e48d7e7583d6ea = $(`<div id="html_e3677ca70d7a76aa26e48d7e7583d6ea" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 715<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Apartment<br>     <b>City:</b> Huntington Beach<br>     <b>State:</b> CA<br>     </div></div>`)[0];
+            popup_009395785b27a37c5cf1b6dddc67e690.setContent(html_e3677ca70d7a76aa26e48d7e7583d6ea);
+        
+
+        circle_marker_8eb9f1a9c29ee7979618a2725d31a5c2.bindPopup(popup_009395785b27a37c5cf1b6dddc67e690)
+        ;
+
+        
+    
+    
+            circle_marker_8eb9f1a9c29ee7979618a2725d31a5c2.bindTooltip(
+                `<div>
+                     CA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8ad6a3fafddfe25635b9638e6467aa41 = L.circleMarker(
+                [37.66283579, -122.4793432],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_93989cb0cb84e05a59c40b0ccc382199 = L.popup({"maxWidth": 265});
+
+        
+            var html_516a24642f71588321812f473e610e61 = $(`<div id="html_516a24642f71588321812f473e610e61" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 636<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Apartment<br>     <b>City:</b> Pacifica<br>     <b>State:</b> CA<br>     </div></div>`)[0];
+            popup_93989cb0cb84e05a59c40b0ccc382199.setContent(html_516a24642f71588321812f473e610e61);
+        
+
+        circle_marker_8ad6a3fafddfe25635b9638e6467aa41.bindPopup(popup_93989cb0cb84e05a59c40b0ccc382199)
+        ;
+
+        
+    
+    
+            circle_marker_8ad6a3fafddfe25635b9638e6467aa41.bindTooltip(
+                `<div>
+                     CA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_691ab8d2fae46126a119ac134301c41a = L.circleMarker(
+                [37.58579114, -122.0223524],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_f85aebbbefb9a5135af5f3f2d46d24a5 = L.popup({"maxWidth": 265});
+
+        
+            var html_2efc3d357412955f5abebbab3ceb5630 = $(`<div id="html_2efc3d357412955f5abebbab3ceb5630" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 215<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Apartment<br>     <b>City:</b> Union City<br>     <b>State:</b> CA<br>     </div></div>`)[0];
+            popup_f85aebbbefb9a5135af5f3f2d46d24a5.setContent(html_2efc3d357412955f5abebbab3ceb5630);
+        
+
+        circle_marker_691ab8d2fae46126a119ac134301c41a.bindPopup(popup_f85aebbbefb9a5135af5f3f2d46d24a5)
+        ;
+
+        
+    
+    
+            circle_marker_691ab8d2fae46126a119ac134301c41a.bindTooltip(
+                `<div>
+                     CA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_3d550f15e3c6e8bb0b175398642e82b6 = L.circleMarker(
+                [37.69543548, -121.8815316],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_c86301169b12523df4adac8bd04abf3b = L.popup({"maxWidth": 265});
+
+        
+            var html_d47a93da3288e694deb077eb834def41 = $(`<div id="html_d47a93da3288e694deb077eb834def41" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 549<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Customer Own<br>     <b>Property Type:</b> Apartment<br>     <b>City:</b> Pleasanton<br>     <b>State:</b> CA<br>     </div></div>`)[0];
+            popup_c86301169b12523df4adac8bd04abf3b.setContent(html_d47a93da3288e694deb077eb834def41);
+        
+
+        circle_marker_3d550f15e3c6e8bb0b175398642e82b6.bindPopup(popup_c86301169b12523df4adac8bd04abf3b)
+        ;
+
+        
+    
+    
+            circle_marker_3d550f15e3c6e8bb0b175398642e82b6.bindTooltip(
+                `<div>
+                     CA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_9d6349a1bc6ff39ea605a5c43d78bbcc = L.circleMarker(
+                [42.48873701, -71.4169942],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_8bca7498ef23aad45987eb9d5fde9a0f = L.popup({"maxWidth": 265});
+
+        
+            var html_258db1c16364ca9dda36297dd2192790 = $(`<div id="html_258db1c16364ca9dda36297dd2192790" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 131<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Acton<br>     <b>State:</b> MA<br>     </div></div>`)[0];
+            popup_8bca7498ef23aad45987eb9d5fde9a0f.setContent(html_258db1c16364ca9dda36297dd2192790);
+        
+
+        circle_marker_9d6349a1bc6ff39ea605a5c43d78bbcc.bindPopup(popup_8bca7498ef23aad45987eb9d5fde9a0f)
+        ;
+
+        
+    
+    
+            circle_marker_9d6349a1bc6ff39ea605a5c43d78bbcc.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_06ac1d29044759cdeed66c601a08907a = L.circleMarker(
+                [42.51425091, -71.40912545],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_b85e857b86c44bb17a3e1d7be0760101 = L.popup({"maxWidth": 265});
+
+        
+            var html_3ff41c5665567fcb04550e6b852a1eb7 = $(`<div id="html_3ff41c5665567fcb04550e6b852a1eb7" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 339<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Acton<br>     <b>State:</b> MA<br>     </div></div>`)[0];
+            popup_b85e857b86c44bb17a3e1d7be0760101.setContent(html_3ff41c5665567fcb04550e6b852a1eb7);
+        
+
+        circle_marker_06ac1d29044759cdeed66c601a08907a.bindPopup(popup_b85e857b86c44bb17a3e1d7be0760101)
+        ;
+
+        
+    
+    
+            circle_marker_06ac1d29044759cdeed66c601a08907a.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_53a206cd65c5e09bb40ed2f6e35ee715 = L.circleMarker(
+                [42.2406795228218, -71.1148119427324],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_f90bd5325f3da65c07f6775dd07e8e8b = L.popup({"maxWidth": 265});
+
+        
+            var html_5590e398a87aa61823fd624917338903 = $(`<div id="html_5590e398a87aa61823fd624917338903" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 194<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> PPA<br>     <b>Property Type:</b> Educational<br>     <b>City:</b> Milton<br>     <b>State:</b> MA<br>     </div></div>`)[0];
+            popup_f90bd5325f3da65c07f6775dd07e8e8b.setContent(html_5590e398a87aa61823fd624917338903);
+        
+
+        circle_marker_53a206cd65c5e09bb40ed2f6e35ee715.bindPopup(popup_f90bd5325f3da65c07f6775dd07e8e8b)
+        ;
+
+        
+    
+    
+            circle_marker_53a206cd65c5e09bb40ed2f6e35ee715.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_66f4de979512179bc7440462600ba0a0 = L.circleMarker(
+                [42.242900096813, -71.1152781683355],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_473dd0451bb5eed13dfc6711f57eeeef = L.popup({"maxWidth": 265});
+
+        
+            var html_200f4f215fd3942bdc9259f49f64b4e0 = $(`<div id="html_200f4f215fd3942bdc9259f49f64b4e0" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 688<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Educational <br>     <b>City:</b> Milton<br>     <b>State:</b> MA<br>     </div></div>`)[0];
+            popup_473dd0451bb5eed13dfc6711f57eeeef.setContent(html_200f4f215fd3942bdc9259f49f64b4e0);
+        
+
+        circle_marker_66f4de979512179bc7440462600ba0a0.bindPopup(popup_473dd0451bb5eed13dfc6711f57eeeef)
+        ;
+
+        
+    
+    
+            circle_marker_66f4de979512179bc7440462600ba0a0.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e2103fc101ed6b7e790e5b52c14c58a3 = L.circleMarker(
+                [39.8148830206972, -74.9247645991795],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_3105dc162e60923fff07b9058f8adbf5 = L.popup({"maxWidth": 265});
+
+        
+            var html_7be0f70cd7f80fc36ebb0f63037a8914 = $(`<div id="html_7be0f70cd7f80fc36ebb0f63037a8914" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 513<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Industrial<br>     <b>City:</b> West Berlin<br>     <b>State:</b> NJ<br>     </div></div>`)[0];
+            popup_3105dc162e60923fff07b9058f8adbf5.setContent(html_7be0f70cd7f80fc36ebb0f63037a8914);
+        
+
+        circle_marker_e2103fc101ed6b7e790e5b52c14c58a3.bindPopup(popup_3105dc162e60923fff07b9058f8adbf5)
+        ;
+
+        
+    
+    
+            circle_marker_e2103fc101ed6b7e790e5b52c14c58a3.bindTooltip(
+                `<div>
+                     NJ
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_aa76515c8a4d8e905e4269041572458d = L.circleMarker(
+                [39.8106025465794, -74.9240826126447],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_7c9e397502cb8b27d8d2f8f4078f61f9 = L.popup({"maxWidth": 265});
+
+        
+            var html_eb2964fc06c5eb58cab370efdd4f7f1b = $(`<div id="html_eb2964fc06c5eb58cab370efdd4f7f1b" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 139<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Industrial<br>     <b>City:</b> West Berlin<br>     <b>State:</b> NJ<br>     </div></div>`)[0];
+            popup_7c9e397502cb8b27d8d2f8f4078f61f9.setContent(html_eb2964fc06c5eb58cab370efdd4f7f1b);
+        
+
+        circle_marker_aa76515c8a4d8e905e4269041572458d.bindPopup(popup_7c9e397502cb8b27d8d2f8f4078f61f9)
+        ;
+
+        
+    
+    
+            circle_marker_aa76515c8a4d8e905e4269041572458d.bindTooltip(
+                `<div>
+                     NJ
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8e2743e76a9a7b719b9b01e001cdac17 = L.circleMarker(
+                [42.0580835020985, -71.6662087479841],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_b56207912a07855aa77be8b615b1ce07 = L.popup({"maxWidth": 265});
+
+        
+            var html_077168ee9dd2dbef4791956c98e093b4 = $(`<div id="html_077168ee9dd2dbef4791956c98e093b4" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 248<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Uxbridge<br>     <b>State:</b> MA<br>     </div></div>`)[0];
+            popup_b56207912a07855aa77be8b615b1ce07.setContent(html_077168ee9dd2dbef4791956c98e093b4);
+        
+
+        circle_marker_8e2743e76a9a7b719b9b01e001cdac17.bindPopup(popup_b56207912a07855aa77be8b615b1ce07)
+        ;
+
+        
+    
+    
+            circle_marker_8e2743e76a9a7b719b9b01e001cdac17.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_4710da011d5f7015bf563d246df56810 = L.circleMarker(
+                [42.7499970578579, -71.1428183825919],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_5c499d372b047c0583aade3ad023198a = L.popup({"maxWidth": 265});
+
+        
+            var html_e653999d8559f1486765f3352d9afc43 = $(`<div id="html_e653999d8559f1486765f3352d9afc43" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 720<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Methuen<br>     <b>State:</b> MA<br>     </div></div>`)[0];
+            popup_5c499d372b047c0583aade3ad023198a.setContent(html_e653999d8559f1486765f3352d9afc43);
+        
+
+        circle_marker_4710da011d5f7015bf563d246df56810.bindPopup(popup_5c499d372b047c0583aade3ad023198a)
+        ;
+
+        
+    
+    
+            circle_marker_4710da011d5f7015bf563d246df56810.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b5647df7f9a5300f31b607413be54224 = L.circleMarker(
+                [41.4531554810868, -72.1437109254786],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_85df8ecf2a9320892a9c7e519c42e976 = L.popup({"maxWidth": 265});
+
+        
+            var html_7fa460e2212e666c27402b51aa9f2f93 = $(`<div id="html_7fa460e2212e666c27402b51aa9f2f93" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 199<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Uncasville<br>     <b>State:</b> CT<br>     </div></div>`)[0];
+            popup_85df8ecf2a9320892a9c7e519c42e976.setContent(html_7fa460e2212e666c27402b51aa9f2f93);
+        
+
+        circle_marker_b5647df7f9a5300f31b607413be54224.bindPopup(popup_85df8ecf2a9320892a9c7e519c42e976)
+        ;
+
+        
+    
+    
+            circle_marker_b5647df7f9a5300f31b607413be54224.bindTooltip(
+                `<div>
+                     CT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b074b2742815bf2ebb11e1b44db5cc69 = L.circleMarker(
+                [42.6692799918777, -72.5366566802934],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_c7ee7877108b2cd4b015130135602029 = L.popup({"maxWidth": 265});
+
+        
+            var html_e1dfb09a5a670ff740e909eeaaa5bf3e = $(`<div id="html_e1dfb09a5a670ff740e909eeaaa5bf3e" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 297<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Bernardston<br>     <b>State:</b> MA<br>     </div></div>`)[0];
+            popup_c7ee7877108b2cd4b015130135602029.setContent(html_e1dfb09a5a670ff740e909eeaaa5bf3e);
+        
+
+        circle_marker_b074b2742815bf2ebb11e1b44db5cc69.bindPopup(popup_c7ee7877108b2cd4b015130135602029)
+        ;
+
+        
+    
+    
+            circle_marker_b074b2742815bf2ebb11e1b44db5cc69.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_6f86cc7c8fa43dcb9c417ccfb3e5d333 = L.circleMarker(
+                [42.5893000066111, -72.6187739750347],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_5605c01249ea4dae6ff2ee3da7504c4b = L.popup({"maxWidth": 265});
+
+        
+            var html_28c1a707958e214c369a360c52a6b491 = $(`<div id="html_28c1a707958e214c369a360c52a6b491" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 339<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Greenfield<br>     <b>State:</b> MA<br>     </div></div>`)[0];
+            popup_5605c01249ea4dae6ff2ee3da7504c4b.setContent(html_28c1a707958e214c369a360c52a6b491);
+        
+
+        circle_marker_6f86cc7c8fa43dcb9c417ccfb3e5d333.bindPopup(popup_5605c01249ea4dae6ff2ee3da7504c4b)
+        ;
+
+        
+    
+    
+            circle_marker_6f86cc7c8fa43dcb9c417ccfb3e5d333.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_48264944e7cd6d9e73ad5eaad28a4d10 = L.circleMarker(
+                [42.5744350196345, -72.6216158521824],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_6d6ab2df678607a03a77ed63d5656c26 = L.popup({"maxWidth": 265});
+
+        
+            var html_7395f119f8ea0928422db6cf54cbb730 = $(`<div id="html_7395f119f8ea0928422db6cf54cbb730" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 360<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Greenfield<br>     <b>State:</b> MA<br>     </div></div>`)[0];
+            popup_6d6ab2df678607a03a77ed63d5656c26.setContent(html_7395f119f8ea0928422db6cf54cbb730);
+        
+
+        circle_marker_48264944e7cd6d9e73ad5eaad28a4d10.bindPopup(popup_6d6ab2df678607a03a77ed63d5656c26)
+        ;
+
+        
+    
+    
+            circle_marker_48264944e7cd6d9e73ad5eaad28a4d10.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_2107d0ad17480a287c21b18f9fefaf64 = L.circleMarker(
+                [42.6756033452526, -72.4967065964339],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_496f28996e1fee46845b3c2e150718a9 = L.popup({"maxWidth": 265});
+
+        
+            var html_88f235f44e16bb8291dbddc2fcf1ac9f = $(`<div id="html_88f235f44e16bb8291dbddc2fcf1ac9f" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 350<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Bernardston<br>     <b>State:</b> MA<br>     </div></div>`)[0];
+            popup_496f28996e1fee46845b3c2e150718a9.setContent(html_88f235f44e16bb8291dbddc2fcf1ac9f);
+        
+
+        circle_marker_2107d0ad17480a287c21b18f9fefaf64.bindPopup(popup_496f28996e1fee46845b3c2e150718a9)
+        ;
+
+        
+    
+    
+            circle_marker_2107d0ad17480a287c21b18f9fefaf64.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_3e458113de5a17f0153686fde2c053eb = L.circleMarker(
+                [42.295401366291, -71.4858169748146],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_a379b1553f5cc634dcffd58e1c787727 = L.popup({"maxWidth": 265});
+
+        
+            var html_4425da39767cb3cf54aadf48a2e78b57 = $(`<div id="html_4425da39767cb3cf54aadf48a2e78b57" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 720<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Retail<br>     <b>City:</b> Framingham<br>     <b>State:</b> MA<br>     </div></div>`)[0];
+            popup_a379b1553f5cc634dcffd58e1c787727.setContent(html_4425da39767cb3cf54aadf48a2e78b57);
+        
+
+        circle_marker_3e458113de5a17f0153686fde2c053eb.bindPopup(popup_a379b1553f5cc634dcffd58e1c787727)
+        ;
+
+        
+    
+    
+            circle_marker_3e458113de5a17f0153686fde2c053eb.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_da69957ebfea9ca0fbdc053b6dae5c08 = L.circleMarker(
+                [42.0700332165877, -72.555477869468],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.4, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_9db36b059e77b4efa0a66763d212d38f);
+        
+    
+        var popup_d619643cf5becac9bd630709c8813e29 = L.popup({"maxWidth": 265});
+
+        
+            var html_ace335065f52a8ac8c8464c66c8c382d = $(`<div id="html_ace335065f52a8ac8c8464c66c8c382d" style="width: 100.0%; height: 100.0%;">     <div style="width: 265px; max-height: 350px; overflow-y: auto; font-size: 15px;">     <b>DC Size (kW):</b> 355<br>     <b>Stage:</b> Under Development<br>     <b>Type of Contract:</b> Community Solar<br>     <b>Property Type:</b> Religious<br>     <b>City:</b> Springfield<br>     <b>State:</b> MA<br>     </div></div>`)[0];
+            popup_d619643cf5becac9bd630709c8813e29.setContent(html_ace335065f52a8ac8c8464c66c8c382d);
+        
+
+        circle_marker_da69957ebfea9ca0fbdc053b6dae5c08.bindPopup(popup_d619643cf5becac9bd630709c8813e29)
+        ;
+
+        
+    
+    
+            circle_marker_da69957ebfea9ca0fbdc053b6dae5c08.bindTooltip(
+                `<div>
+                     MA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>
